@@ -7,13 +7,15 @@ using namespace std;
 bool checkTable(int table[], int size)
 {
 
-    if (table[0] > table[1] && table[1] > table[2] && table[2] > table[3] && table[3] > table[4] && table[4] > table[5] && table[5] > table[6] && table[6] > table[7] && table[7] > table[8])
+    for (int i = 0; i < size - 1; i++)
     {
-
-        return true;
+        if (!table[i] > table[i] + 1)
+        {
+            return false;
+        }
     }
 
-    return false;
+    return true;
 }
 
 // announce_result
